@@ -7,7 +7,7 @@ import axios from 'axios';
 // Dans le 1er niveau, je dois afficher 5 toutes les 60 secondes
 const url = 'https://api.datamuse.com/words?ml=chicken&sp=*';
 
-export default class FindWords extends React.Component {
+export default class ListWords extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -25,7 +25,7 @@ export default class FindWords extends React.Component {
 
   render() {
     const wordArray = this.state.words.map((word, index) => word.word);
-    console.log(wordArray);
+    //console.log(wordArray);
     let item1 = wordArray[Math.floor(Math.random()* wordArray.length)];
     let item2 = wordArray[Math.floor(Math.random()* wordArray.length)];
     let item3 = wordArray[Math.floor(Math.random()* wordArray.length)];
@@ -33,11 +33,11 @@ export default class FindWords extends React.Component {
     let item5 = wordArray[Math.floor(Math.random()* wordArray.length)];
     return (
       <div>
-        <li>{item1}</li>
-        <li>{item2}</li>
-        <li>{item3}</li>
-        <li>{item4}</li>
-        <li>{item5}</li>
+        <li style={{ color: 'red' }}>{item1}</li>
+        <li style={{ color: 'red' }}>{item2}</li>
+        <li style={{ color: 'red' }}>{item3}</li>
+        <li style={{ color: 'red' }}>{item4}</li>
+        <li style={{ color: 'red' }}>{item5}</li>
       </div>
       )
   }
