@@ -9,6 +9,10 @@ export default class Countdown extends React.Component {
     this.decreaseTime = this.decreaseTime.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({seconds: nextProps.seconds})
+  }
+
   decreaseTime() {
     const newCount = this.state.seconds - 1;
     if (newCount >= 0) {
